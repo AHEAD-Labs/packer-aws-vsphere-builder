@@ -13,7 +13,7 @@ unzip packer_${PACKER_VERSION}_linux_amd64.zip -d /usr/bin && \
 chmod +x /usr/bin/packer && \
 wget https://github.com/jetbrains-infra/packer-builder-vsphere/releases/download/v${PLUGIN_VERSION}/packer-builder-vsphere-iso.linux -P /usr/bin && \
 chmod +x /usr/bin/packer-builder-vsphere-iso.linux && \
-pip3 install "ansible>=2.7" && \
+pip3 install "ansible==2.7.10" && \
 pip3 install "pywinrm>=0.3.0"
 #apt-add-repository ppa:ansible/ansible && \
 #apt-get update && \
