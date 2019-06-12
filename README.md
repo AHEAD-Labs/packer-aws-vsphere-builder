@@ -1,5 +1,5 @@
-# AWS BYOL Factory Docker Image
-Used to build AWS WorkSpaces BYOL AMI on VMWare vSphere and upload to AWS s3
+# Image Factory Docker Image
+Used to build Packer images on VMware vSphere.  Also, contains AWS cli that be used for further automation.
 
 ## What's included
 * PowerShell
