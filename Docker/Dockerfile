@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/powershell
-ENV PACKER_VERSION 1.4.1
+ENV PACKER_VERSION 1.4.2
 ENV PLUGIN_VERSION 2.0.1
 RUN pwsh -c 'Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted' && \
 apt-get update && \
