@@ -6,6 +6,7 @@ apt-get update && \
 apt-get install wget unzip python3 software-properties-common python3-pip jq ssh -y && \
 #pip3 install pip --upgrade && \
 pip3 install awscli && \
+pwsh -c 'install-module az -force -confirm:$false' && \
 pwsh -c 'install-module VMware.PowerCLI -force -confirm:$false' && \
 pwsh -c 'Set-PowerCLIConfiguration -InvalidCertificateAction:Ignore -confirm:$false' && \
 wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip && \
