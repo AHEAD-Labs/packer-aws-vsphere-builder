@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/powershell
 ENV PACKER_VERSION 1.4.2
-ENV PLUGIN_VERSION 2.0.1
+ENV PLUGIN_VERSION 2.3
+ENV ANSIBLE_VERSION 2.8
 RUN pwsh -c 'Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted' && \
 apt-get update && \
 apt-get install wget unzip python3 software-properties-common python3-pip jq ssh -y && \
@@ -14,8 +15,8 @@ unzip packer_${PACKER_VERSION}_linux_amd64.zip -d /usr/bin && \
 chmod +x /usr/bin/packer && \
 wget https://github.com/jetbrains-infra/packer-builder-vsphere/releases/download/v${PLUGIN_VERSION}/packer-builder-vsphere-iso.linux -P /usr/bin && \
 chmod +x /usr/bin/packer-builder-vsphere-iso.linux && \
-pip3 install "ansible>=2.8" && \
-pip3 install "pywinrm>=0.3.0"
+pip3 install "ansible>=${ANSIBLE_VERSION}" && \
+pip3 install "pywinrm"
 #apt-add-repository ppa:ansible/ansible && \
 #apt-get update && \
 #apt-get install ansible -y
