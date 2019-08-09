@@ -5,7 +5,6 @@ ENV ANSIBLE_VERSION 2.8
 RUN pwsh -c 'Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted' && \
 apt-get update && \
 apt-get install wget unzip python3 software-properties-common python3-pip jq ssh -y && \
-#pip3 install pip --upgrade && \
 pip3 install awscli && \
 pwsh -c 'install-module az -force -confirm:$false' && \
 pwsh -c 'install-module VMware.PowerCLI -force -confirm:$false' && \
@@ -17,6 +16,3 @@ wget https://github.com/jetbrains-infra/packer-builder-vsphere/releases/download
 chmod +x /usr/bin/packer-builder-vsphere-iso.linux && \
 pip3 install "ansible>=${ANSIBLE_VERSION}" && \
 pip3 install "pywinrm"
-#apt-add-repository ppa:ansible/ansible && \
-#apt-get update && \
-#apt-get install ansible -y
