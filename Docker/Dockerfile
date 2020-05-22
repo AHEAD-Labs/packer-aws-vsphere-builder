@@ -16,3 +16,4 @@ chmod +x /usr/bin/packer && \
 #chmod +x /usr/bin/packer-builder-vsphere-iso.linux && \
 pip3 install "ansible>=${ANSIBLE_VERSION}" && \
 pip3 install "pywinrm"
+RUN apt-get install qemu -y
